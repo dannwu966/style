@@ -427,7 +427,7 @@
   },
   "46": {
     "inputs": {
-      "image": "/api/view?subfolder=&type=input&filename=3e3432c2-d7cf-45b1-b8f7-5990f682be88.png",
+      "image": "%%IMGURL%%",
       "keep_alpha_channel": false,
       "output_mode": false,
       "choose image to upload": "image"
