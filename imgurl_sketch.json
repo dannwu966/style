@@ -102,7 +102,7 @@
   },
   "9": {
     "inputs": {
-      "seed": %%GENSEED%%,
+      "seed": 12345,
       "steps": 12,
       "cfg": 1,
       "sampler_name": "dpmpp_2m",
