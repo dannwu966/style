@@ -51,7 +51,7 @@
   },
   "4": {
     "inputs": {
-      "text": "%%PROMPT%%",
+      "text": %%PROMPT%%,
       "speak_and_recognation": true,
       "clip": [
         "17",
