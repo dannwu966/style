@@ -108,7 +108,7 @@
   "9": {
     "inputs": {
       "seed": 1017945737256725,
-      "steps": 8,
+      "steps": 10,
       "cfg": 1,
       "sampler_name": "dpmpp_2m",
       "scheduler": "beta",
@@ -281,7 +281,7 @@
   },
   "30": {
     "inputs": {
-      "text": "makoto shinkai style,",
+      "text": "ghibli style,",
       "speak_and_recognation": {
         "__value__": [
           false,
