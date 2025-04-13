@@ -108,7 +108,7 @@
   "9": {
     "inputs": {
       "seed": 1017945737256725,
-      "steps": 9,
+      "steps": 8,
       "cfg": 1,
       "sampler_name": "dpmpp_2m",
       "scheduler": "beta",
