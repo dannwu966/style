@@ -1,0 +1,351 @@
+{
+  "1": {
+    "inputs": {
+      "seed": 992326044847016,
+      "steps": 20,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "6",
+        0
+      ],
+      "positive": [
+        "5",
+        0
+      ],
+      "negative": [
+        "5",
+        1
+      ],
+      "latent_image": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K採樣器"
+    }
+  },
+  "2": {
+    "inputs": {
+      "text": "",
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "clip": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本編碼器"
+    }
+  },
+  "3": {
+    "inputs": {
+      "samples": [
+        "1",
+        0
+      ],
+      "vae": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解碼"
+    }
+  },
+  "4": {
+    "inputs": {
+      "guidance": 30,
+      "conditioning": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "Flux引导"
+    }
+  },
+  "5": {
+    "inputs": {
+      "noise_mask": false,
+      "positive": [
+        "7",
+        0
+      ],
+      "negative": [
+        "2",
+        0
+      ],
+      "vae": [
+        "8",
+        0
+      ],
+      "pixels": [
+        "15",
+        0
+      ],
+      "mask": [
+        "15",
+        1
+      ]
+    },
+    "class_type": "InpaintModelConditioning",
+    "_meta": {
+      "title": "内补模型条件"
+    }
+  },
+  "6": {
+    "inputs": {
+      "model": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "DifferentialDiffusion",
+    "_meta": {
+      "title": "差异扩散DifferentialDiffusion"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image_strength": "high",
+      "conditioning": [
+        "4",
+        0
+      ],
+      "style_model": [
+        "11",
+        0
+      ],
+      "clip_vision_output": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "StyleModelApplySimple",
+    "_meta": {
+      "title": "StyleModelApplySimple"
+    }
+  },
+  "8": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "VAE載入器"
+    }
+  },
+  "9": {
+    "inputs": {
+      "crop": "center",
+      "clip_vision": [
+        "10",
+        0
+      ],
+      "image": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP視覺編碼"
+    }
+  },
+  "10": {
+    "inputs": {
+      "clip_name": "sigclip_vision_patch14_384.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "CLIP視覺載入器"
+    }
+  },
+  "11": {
+    "inputs": {
+      "style_model_name": "flux1-redux-dev.safetensors"
+    },
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "風格模型載入器"
+    }
+  },
+  "12": {
+    "inputs": {
+      "unet_name": "flux1-fill-dev.safetensors",
+      "weight_dtype": "fp8_e4m3fn_fast"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "UNET載入器"
+    }
+  },
+  "13": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "雙CLIP載入器"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text": [
+        "19",
+        2
+      ],
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "clip": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本編碼器"
+    }
+  },
+  "15": {
+    "inputs": {
+      "left": 504,
+      "top": 200,
+      "right": 504,
+      "bottom": 200,
+      "feathering": 24,
+      "image": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ImagePadForOutpaint",
+    "_meta": {
+      "title": "外補畫板"
+    }
+  },
+  "16": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "儲存圖像"
+    }
+  },
+  "18": {
+    "inputs": {
+      "text": [
+        "19",
+        2
+      ],
+      "PreviewTextNode_0": "The image shows a night view of a cityscape with a tall skyscraper on the right side. The skyscraper is lit up with blue and red lights, creating a striking contrast against the dark sky. On the left side of the image, there are two fireworks exploding in the sky, one in pink and the other in white. The fireworks are bursting in different directions, creating an explosion of light and color. The city below is filled with buildings of various sizes and shapes, all of which are lit up in different colors. The buildings appear to be densely packed together, with some buildings having a mix of modern and traditional architecture. The sky is dark, making the colors of the fireworks stand out even more.",
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      }
+    },
+    "class_type": "PreviewTextNode",
+    "_meta": {
+      "title": "預覽文本"
+    }
+  },
+  "19": {
+    "inputs": {
+      "text_input": "",
+      "task": "more_detailed_caption",
+      "fill_mask": false,
+      "keep_model_loaded": false,
+      "max_new_tokens": 400,
+      "num_beams": 3,
+      "do_sample": true,
+      "output_mask_select": "",
+      "seed": 491955286126739,
+      "speak_and_recognation": {
+        "__value__": [
+          false,
+          true
+        ]
+      },
+      "image": [
+        "22",
+        0
+      ],
+      "florence2_model": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "Florence2Run",
+    "_meta": {
+      "title": "Florence2Run"
+    }
+  },
+  "20": {
+    "inputs": {
+      "model": "Florence-2-Flux-Large",
+      "precision": "fp16",
+      "attention": "sdpa"
+    },
+    "class_type": "Florence2ModelLoader",
+    "_meta": {
+      "title": "Florence2ModelLoader"
+    }
+  },
+  "21": {
+    "inputs": {
+      "width": 1280,
+      "height": 960,
+      "interpolation": "nearest",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "22": {
+    "inputs": {
+      "image": "https://image-cdn.learnin.tw/bnextmedia/image/album/2019-12/img-1577779026-38598.jpg",
+      "keep_alpha_channel": false,
+      "output_mode": false,
+      "choose image to upload": "image"
+    },
+    "class_type": "LoadImageFromUrl",
+    "_meta": {
+      "title": "Load Image From URL"
+    }
+  }
+}
